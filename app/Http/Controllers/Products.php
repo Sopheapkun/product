@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class Products extends Controller
 {
@@ -14,9 +15,15 @@ class Products extends Controller
      */
     public function index()
     {
-        $products = Product::get();
-       // dd($product);
+        // $products = Product::get();
+        // DB::('products')->join('id') // query builder
+        $products = Product::with('getCategory', 'getCreator')->get();
+        // dd($products);
+       // dd($products);
+       // $categories = Category::with('getProducts')->get();
+        //dd($categories);
         return view('products/index',compact('products'));
+
     }
 
     /**
@@ -26,7 +33,9 @@ class Products extends Controller
      */
     public function create()
     {
-        return view('products/create');
+
+        $categories = Category::get();
+        return view('products/create',compact('categories'));
     }
 
     /**

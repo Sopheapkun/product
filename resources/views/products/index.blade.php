@@ -26,7 +26,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>Product_Name</th>
-                                <th>Category_ID</th>
+                                <th>Category Name</th>
+                                <th>Category ID</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -36,7 +37,9 @@
                                 <tr>
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->product_name}}</td>
-                                    <td>{{$item->category_id}}</td>
+                                    <td>{{$item->getCategory->category_name }}</td>
+                                    {{-- <td>{{$item->getCreator->category_name. $item->getCreator->id }}</td> --}}
+                                    <td>{{$item->getCreator->id }}</td>
                                     <td>
 
                                             <a style="color:#fff;" href="{{url('product/edit/'.$item->id)}}">

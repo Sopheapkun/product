@@ -26,13 +26,17 @@
                     {{-- <label for="">Category ID</label>
                     <input name="cat_id" type="text" class="form-control">
                     <br> --}}
-                    <div class="select" class="">
-                        <select name="cat_id" id="cat_id" class="shadow-sm card px-3 py-2 my-3">
-                            <option value="" selected disabled>Choose Category</option>
-                            <option value="1">Drink</option>
-                            <option value="2">Cake</option>
-                        </select>
-                    </div>
+
+
+                        <div class="select" class="">
+                            <select name="cat_id" id="cat_id" class="shadow-sm card px-3 py-2 my-3">
+                                <option value="" selected disabled>Choose Category</option>
+                                @foreach ( $categories as $item )
+                                    <option value="{{$item->id}}">{{$item->category_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                     <br>
 
                     <button type="submit" class="btn btn-primary">Save</button>

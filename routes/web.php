@@ -23,6 +23,10 @@ Route::delete('product/delete/{id}', 'App\Http\Controllers\Products@delete')->na
 
 //category
 Route::get('category/', 'App\Http\Controllers\Categorys@index')->name('index');
+Route::get('category/create', 'App\Http\Controllers\Categorys@create')->name('category.create');
+Route::post('category/store', 'App\Http\Controllers\Categorys@store')->name('category.store');
+
+
 
 
 

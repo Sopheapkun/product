@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class Categorys extends Controller
 {
@@ -13,7 +14,9 @@ class Categorys extends Controller
      */
     public function index()
     {
-        return view('category/');
+        $categorys =Category::get();
+      //  dd($category);
+        return view('pro_category/index',compact("categorys"));
     }
 
     /**
@@ -23,7 +26,7 @@ class Categorys extends Controller
      */
     public function create()
     {
-        //
+        return view('pro_category/create');
     }
 
     /**
@@ -34,7 +37,12 @@ class Categorys extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'category_name' => $request->input('cat_name')
+        ];
+      //  dd($data);
+        Category::create($data);
+        return redirect(url('category/'));
     }
 
     /**

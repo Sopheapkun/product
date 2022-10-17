@@ -11,7 +11,7 @@
                     </div>
                     <div>
                         {{-- <a href="{{ route('customer.create') }}"><button class="btn btn-primary">Add New</button></a> --}}
-                        <a href="{{url('create')}}"><button class="btn btn-primary">Add New Product</button></a>
+                        <a href="{{url('category/create')}}"><button class="btn btn-primary">Add New Category</button></a>
                     </div>
                 </div>
             </div>
@@ -30,8 +30,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @if ($products != null)
-                                @foreach ($products as $item )
+                           @if ($categorys != null)
+                                @foreach ($categorys as $item )
                                 <tr>
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->category_name}}</td>
