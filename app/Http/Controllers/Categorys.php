@@ -13,7 +13,7 @@ class Categorys extends Controller
      */
     public function index()
     {
-        //
+        return view('category/');
     }
 
     /**

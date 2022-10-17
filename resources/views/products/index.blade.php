@@ -11,7 +11,7 @@
                     </div>
                     <div>
                         {{-- <a href="{{ route('customer.create') }}"><button class="btn btn-primary">Add New</button></a> --}}
-                        <a href="{{url('create')}}"><button class="btn btn-primary">Add New Product</button></a>
+                        <a href="{{url('product/create')}}"><button class="btn btn-primary">Add New Product</button></a>
                     </div>
                 </div>
             </div>
@@ -39,13 +39,13 @@
                                     <td>{{$item->category_id}}</td>
                                     <td>
 
-                                            <a style="color:#fff;" href="{{url('edit/'.$item->id)}}">
+                                            <a style="color:#fff;" href="{{url('product/edit/'.$item->id)}}">
                                                 <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                                             </a>
 
                                     </td>
                                     <td>
-                                        <form method="post" action="{{url('delete/'.$item->id)}}">
+                                        <form method="post" action="{{url('product/delete/'.$item->id)}}">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>

@@ -40,11 +40,11 @@ class Products extends Controller
        // dd($request->all());
        $data = [
         'product_name' => $request->input('pro_name'),
-        'category_id' => $request->input('cat_id')
+        'category_id' => $request->cat_id
        ];
        //dd($data);
        Product::create($data);
-       return redirect(url('/'));
+       return redirect(url('product/'));
     }
 
     /**
@@ -87,7 +87,7 @@ class Products extends Controller
            ];
            //dd($data);
            Product::where('id', $id)->update($data);
-           return redirect(url('/'));
+           return redirect(url('product/'));
     }
 
     /**

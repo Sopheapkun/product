@@ -18,15 +18,11 @@
     <div class="row">
         <div class="col-12">
             <div class="shadow-sm card px-3 py-3 my-3 " style="background: white;">
-                <form action="{{url('store')}}" method="POST">
+                <form action="{{url('category/store')}}" method="POST">
                     @csrf
-                    <label for="">Product Name</label>
-                    <input name="pro_name" type="text" class="form-control">
+                    <label for="">Caatrgory name type</label>
+                    <input name="cat_name" type="text" class="form-control">
                     <br>
-                    <label for="">Category ID</label>
-                    <input name="cat_id" type="text" class="form-control">
-                    <br>
-
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>

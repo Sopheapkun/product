@@ -25,8 +25,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Product_Name</th>
-                                <th>Category_ID</th>
+                                <th>Category Name</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -35,8 +34,7 @@
                                 @foreach ($products as $item )
                                 <tr>
                                     <td>{{$item->id}}</td>
-                                    <td>{{$item->product_name}}</td>
-                                    <td>{{$item->category_id}}</td>
+                                    <td>{{$item->category_name}}</td>
                                     <td>
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <a style="color:#fff;" href="{{}}">Edit</a>

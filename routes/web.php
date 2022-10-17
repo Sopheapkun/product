@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 //product
-Route::get('/','App\Http\Controllers\Products@index');
-Route::get('create', 'App\Http\Controllers\Products@create');
-Route::post('store', 'App\Http\Controllers\Products@store');
-Route::get('edit/{id}', 'App\Http\Controllers\Products@edit');
-Route::post('update/{id}', 'App\Http\Controllers\Products@update');
-Route::delete('delete/{id}', 'App\Http\Controllers\Products@delete');
+Route::get('product/','App\Http\Controllers\Products@index')->name('product./');
+Route::get('product/create', 'App\Http\Controllers\Products@create')->name('product.create');
+Route::post('product/store', 'App\Http\Controllers\Products@store')->name('product.store');
+Route::get('product/edit/{id}', 'App\Http\Controllers\Products@edit')->name('product.edit');
+Route::post('product/update/{id}', 'App\Http\Controllers\Products@update')->name('product.update');
+Route::delete('product/delete/{id}', 'App\Http\Controllers\Products@delete')->name('product.delete');
+
+//category
+Route::get('category/', 'App\Http\Controllers\Categorys@index')->name('index');
 
 
 
